@@ -1,0 +1,2 @@
+# Lirify
+AI Lyrics Generator
