@@ -87,3 +87,7 @@ async def generate_lyrics(request: LyricsRequest):
     length = request.length
     generated_text = generate_text(seed, length, model, text_tokenizer, 50)
     return JSONResponse(content={"lyrics": generated_text})
+
+@app.get('/generate')
+async def generate_lyrics():
+    return JSONResponse(content={"message": "Please use POST request to generate lyrics."})
