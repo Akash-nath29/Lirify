@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Loader2 } from 'lucide-react'
 
 interface LyricsFormProps {
   onSubmit: (seedText: string, wordCount: number) => void
+  isLoading: boolean
 }
 
-export default function LyricsForm({ onSubmit }: LyricsFormProps) {
+export default function LyricsForm({ onSubmit, isLoading }: LyricsFormProps) {
   const [seedText, setSeedText] = useState('')
   const [wordCount, setWordCount] = useState(100)
 
@@ -44,7 +46,16 @@ export default function LyricsForm({ onSubmit }: LyricsFormProps) {
           required
         />
       </div>
-      <Button type="submit" className="w-full">Generate Lyrics</Button>
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Generating...
+          </>
+        ) : (
+          'Generate Lyrics'
+        )}
+      </Button>
     </form>
   )
 }
