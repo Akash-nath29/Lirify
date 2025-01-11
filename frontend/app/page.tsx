@@ -14,7 +14,7 @@ export default function Home() {
     setError('')
 
     try {
-      const response = await fetch('https://lirify-backend-production.up.railway.app/generate', {
+      const response = await fetch('https://lirify-backend.onrender.com/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
