@@ -41,7 +41,6 @@ export default function Home() {
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">AI Lyrics Generator</h1>
         <LyricsForm onSubmit={generateLyrics} isLoading={isLoading} />
-        {isLoading && <p className="mt-4 text-center">Generating lyrics...</p>}
         {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
         {lyrics && <LyricsDisplay lyrics={lyrics} />}
       </div>
