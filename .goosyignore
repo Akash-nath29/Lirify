@@ -1,0 +1,10 @@
+.github/
+.vscode/
+env/
+__pycache__/
+*.keras
+.dockerignore
+.csv
+frontend/
+nginx/
+.env
